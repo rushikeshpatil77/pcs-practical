@@ -1,0 +1,188 @@
+Study and generate Unipolar NRZ
+clear ;
+close ;
+clc ; clf ;
+ x =[1 0 1 0 0 1 1 0] // Data St ream
+ //NRZ
+ z =0; // S t a r t i n g v a l u e on x a x i s
+ for i =1: length (x )
+ t =[ z :1: z +1] // S e t of x c o r d i n a t e s f o r c u r r e n t b i t
+//d u r a t i o n
+subplot (2 ,1 ,1)
+ a = gca () ;
+ //a.data_bounds =[0,-1.5; length(x) ,1.5];
+ a . grid =[1 , -1]
+title ( " Data " )
+plot (t ,x ( i ) ) // Pl o t c u r r e n t da ta b i t
+subplot (2 ,1 ,2)
+a = gca () ;
+ a.data_bounds =[0,-1.5;length(x),1.5];
+ a . grid =[1 , -1]
+title ( "NRZ " )
+ if( x( i ) ==0)
+plot (t ,0) // Pl o t 0 f o r c u r r e n t b i t d u r a t i o n
+ else
+plot (t ,1) // Pl o t 1 f o r c u r r e n t b i t d u r a t i o n
+ end
+ z = z +1 // I n c r e am e n t s t a r t i n g v a l u e on x a x i s by
+//one b i t p e r i o d
+ end
+
+
+
+
+
+Study and generate Polar NRZ
+clear ;
+close ;
+ clc ;
+ x =[1 0 1 0 0 1 1 0] // Data St ream
+// P ol a r NRZ
+ z =0; // S t a r t i n g v a l u e on x a x i s
+ for i =1: length (x )
+ t =[ z :1: z +1] // S e t of x c o r d i n a t e s f o r c u r r e n t b i t 
+Duration
+subplot (2 ,1 ,1)
+ a = gca () ;
+//a . data_bounds =[0,-1.5; length( x ),1.5]
+ a . grid =[1 , -1]
+title ( "Data " )
+plot (t ,x ( i ) ) // Pl o t c u r r e n t da ta b i t
+subplot (2 ,1 ,2)
+ a = gca () ;
+ a . data_bounds =[0,-1.5; length( x ),1.5]
+ a . grid =[1 , -1]
+title ( "P ol a r NRZ " )
+ if( x (i ) ==0)
+plot (t , -1) // Pl o t −1 f o r c u r r e n t b i t
+//d u r a t i o n
+ else
+plot (t ,1) // Pl o t 1 f o r c u r r e n t b i t
+//d u r a t i o n
+ end
+ z = z +1 // I n c r e am e n t s t a r t i n g v a l u e on x a x i s by
+//one b i t p e r i o d
+ end
+
+
+
+
+
+
+ Study and generate Unipolar RZ
+ clear ;
+close ;
+ clc ;
+ x =[1 0 1 0 0 1 1 0] // Data St ream
+//RZ
+ z =0; // S t a r t i n g v a l u e on x a x i s
+ for i =1: length (x )
+t =[ z : z +1] // S e t of x c o r d i n a t e s f o r c u r r e n t b i t
+//d u r a t i o n
+subplot (2 ,1 ,1)
+ a = gca () ;
+ a . data_bounds =[0,-1.5; length( x ),1.5]
+ a . grid =[1 , -1]
+title ( "Data" )
+plot (t ,x ( i ) ) // Pl o t c u r r e n t da ta b i t
+ t =[ z :0.5: z +0.5] // S e t of x c o r d i n a t e s f o r f i r s t
+//h a l f b i t d u r a t i o n
+subplot (2 ,1 ,2)
+ a = gca () ;
+ a . data_bounds =[0,-1.5; length( x ),1.5]
+ a . grid =[1 , -1]
+title ( " P ol a r RZ " )
+ if( x( i ) ==0)
+plot (t ,0) // Pl o t 0 f o r f i r s t h a l f b i t
+//d u r a t i o n
+ else
+plot (t ,1) // Pl o t 1 f o r f i r s t h a l f b i t
+//d u r a t i o n
+ end
+ t =[ z +0.5:0.5: z +1] // S e t of x c o r d i n a t e s f o r
+//s e c o n d h a l f b i t d u r a t i o n
+plot (t ,0) // Pl o t 0 f o r s e c o n d h a l f b i t d u r a t i o n
+ z = z +1; // I n c r e am e n t s t a r t i n g v a l u e on x a x i s by
+//one b i t p e r i o d
+ end
+
+
+
+
+Study and generate different Line Codes 1 Polar RZ
+clear ;
+ close ;
+ clc ;
+ x =[1 0 1 0 0 1 1 0] // Data St ream
+// P ol a r RZ
+ z =0; // S t a r t i n g v a l u e on x a x i s
+Analog Communication Lab Manual Dept of Electronics & Telecomm. 
+International Institute of Information Technology, Hinjawadi, Pune. Page 83
+ for i =1: length (x )
+ t =[ z : z +1] // S e t of x c o r d i n a t e s f o r c u r r e n t b i t
+//d u r a t i o n
+subplot (2 ,1 ,1)
+ a = gca () ;
+ a . data_bounds =[0,-1.5; length( x ),1.5]
+ a . grid =[1 , -1]
+title ( "Data " )
+plot (t ,x ( i ) ) // Pl o t c u r r e n t da ta b i t
+ t =[ z :0.5: z +0.5] // S e t of x c o r d i n a t e s f o r f i r s t
+//h a l f b i t d u r a t i o n
+subplot (2 ,1 ,2)
+ a = gca () ;
+ a . data_bounds =[0,-1.5; length( x ),1.5]
+ a . grid =[1 , -1]
+title ( "P ol a r RZ " )
+ if( x( i ) ==0)
+plot (t , -1) // Pl o t −1 f o r f i r s t h a l f b i t
+//d u r a t i o n
+ else
+plot (t ,1) // Pl o t 1 f o r f i r s t h a l f b i t
+//d u r a t i o n
+ end
+ t =[ z +0.5:0.5: z +1] // S e t of x c o r d i n a t e s f o r
+//s e c o n d h a l f b i t d u r a t i o n
+plot (t ,0) // Pl o t 0 f o r s e c o n d h a l f b i t d u r a t i o n
+ z = z +1; // I n c r e am e n t s t a r t i n g v a l u e on x a x i s by
+//one b i t p e r i o d
+ end
+
+
+
+
+Study and generate Bipolar NRZ
+clear ;
+close ;
+ clc ;
+ x =[1 0 1 0 0 1 1 0] // Data s t r eam B i p o l a r NRZ
+ z =0; // S t a r t i n g p o i n t of p l o t on x−a x i s
+ ob = -1; // I n i t i a l o /p b i t v a l u e
+for i =1:1: length ( x )
+subplot (2 ,1 ,1) // Data Pl o t
+ a = gca () ;
+ a . data_bounds =[0,-1.5; length( x ),1.5]
+ a . grid =[1 , -1]
+title ( "Data" )
+t =[ z :1: z +1] // Pl o t r a n g e on x−a x i s (One b i t p e r i o d )
+plot (t ,x ( i ) )
+subplot (2 ,1 ,2) // B i p o l a r B i p o l a r NRZ
+ a = gca () ;
+//a . data_bounds =[0 , -1.5; length ( x ) ,1.5]
+ a . grid =[1 , -1]
+title ( "B i p o l a r NRZ " )
+if( x( i ) ==0)
+ t =[ z :1: z +1] // Pl o t r a n g e on x−a x i s (One
+//b i t p e r i o d )
+plot (t ,0) // Pl o t z e r o
+ else
+ t =[ z :1: z +1] // Pl o t r a n g e on x−a x i s (One
+//b i t p e r i o d )
+ ob = - ob // I n v e r t p r e v i o u s o /p b i t v a l u e
+plot (t , ob ) // Pl o t o /p b i t
+ end
+z = z +1 //Move s t a r t i n g p o i n t of p l o t on x−a x i s by
+//one b i t p e r i o d
+ end
+
+
